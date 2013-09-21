@@ -5,6 +5,7 @@ app = express()
 app.set 'view engine', 'coffee'
 app.engine 'coffee', require('coffeecup').__express
 app.use express.logger()
+app.use express.favicon 'public/favicon.ico'
 assets.cssCompilers.coffee =
     compileSync: (sourcePath, source, helperContext) ->
         template = require sourcePath
