@@ -1,6 +1,9 @@
 express = require 'express'
 assets = require 'connect-assets'
 ccss = require 'ccss'
+process.on 'uncaughtException', (err) ->
+    console.error err
+require('source-map-support').install()
 app = express()
 app.set 'view engine', 'coffee'
 app.engine 'coffee', require('coffeecup').__express
